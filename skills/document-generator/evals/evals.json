@@ -1,0 +1,23 @@
+{
+  "skill_name": "document-generator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a quarterly sales report in Word format with a table showing region, revenue (in 10k CNY), and growth percentage. Include a title '2026 Q1 Sales Report' and make the table use a professional style.",
+      "expected_output": "A .docx file named 'q1_sales_report.docx' containing the title, a table with three columns (Region, Revenue, Growth), and at least 3 rows of sample data. The table should have visible styling.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Generate an Excel workbook for project task tracking with columns: Task ID, Description, Assignee, Status, Due Date. Fill it with 5 sample tasks and apply date formatting to the Due Date column.",
+      "expected_output": "An .xlsx file named 'tasks.xlsx' with a worksheet containing the specified columns, 5 rows of data, and date formatting applied to column E.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Convert this HTML snippet into a PDF with a header and page numbers: <html><body><h1>Weekly Newsletter</h1><p>Hello team, here are the updates...</p></body></html>. Save as 'newsletter.pdf'.",
+      "expected_output": "A PDF file named 'newsletter.pdf' with the HTML content rendered, plus a header on each page and page numbers in the footer.",
+      "files": []
+    }
+  ]
+}

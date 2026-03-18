@@ -4,9 +4,6 @@ description: Creates professional documents from scratch or templates. Use this 
 compatibility:
   tools:
     - exec
-    - read
-    - write
-    - edit
   dependencies:
     - python-docx
     - openpyxl
@@ -141,19 +138,17 @@ document-generator/
 
 ## Dependencies
 
-Install via pip:
+This skill requires Python packages to be installed **beforehand** by the user:
+
 ```bash
 pip install python-docx openpyxl fpdf2 weasyprint jinja2
 ```
 
-Or use system packages (Ubuntu/Debian):
-```bash
-apt install python3-docx python3-openpyxl python3-fpdf python3-weasyprint
-```
+Do not run `apt install` inside the skill; the system should already have a working Python environment. If dependencies are missing, the skill will raise an error prompting the user to install them.
 
-Run the installer script:
+System libraries for WeasyPrint (optional but recommended on Linux):
 ```bash
-python3 install_dependencies.py
+apt install libpango-1.0-0 libgdk-pixbuf2.0-0 libffi-dev
 ```
 
 ## Examples
@@ -235,6 +230,14 @@ python3 create_excel.py "budget.xlsx" \
 - Table styles use Excel/Word built-in styles; common ones: `Light Grid Accent 1`, `Light Shading Accent 2`
 - Image paths can be absolute or relative; for cross-platform, use absolute paths
 - PDF generation via WeasyPrint requires system libraries (Pango, Cairo) on Linux; if missing, fall back to fpdf2 with `--backend fpdf`
+
+## Security Considerations
+
+- This skill **does not** perform any network I/O or system modifications beyond generating files in the specified output directory.
+- All Python scripts are deterministic and only act on user-provided data and templates.
+- The `install_dependencies.py` script is provided for convenience; it only installs Python packages via pip. Recommend reviewing it before running.
+- For first-time use, test in an isolated environment to verify behavior matches expectations.
+- No hidden or background processes are initiated.
 
 ## Troubleshooting
 

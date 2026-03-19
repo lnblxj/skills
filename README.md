@@ -9,6 +9,7 @@ This repository contains my experimental and production-ready skills that extend
 | Skill | Description |
 |-------|-------------|
 | [document-generator](skills/document-generator/) | Creates professional Word, Excel, and PDF documents from templates or structured data with rich formatting, tables, images, and dynamic content |
+| [web-search-local](skills/web-search-local/) | Free web search without API keys: supports Bing, DuckDuckGo, Yandex with caching and automatic failover; optimized for Chinese searches |
 
 ## Skill Details
 

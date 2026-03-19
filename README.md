@@ -31,13 +31,13 @@ A comprehensive document generation system that programmatically creates profess
 pip install python-docx openpyxl fpdf2 weasyprint jinja2
 
 # Create a simple Word doc
-python3 create_word.py "report.docx" --title "My Report" --content "Hello World"
+python3 generate_word.py "report.docx" --title "My Report" --content "Hello World"
 
 # Create Excel from JSON data
-python3 create_excel.py "data.xlsx" --data '{"Sheet1": [{"A1": "Name", "B1": "Score"}]}'
+python3 generate_excel.py "data.xlsx" --data '{"Sheet1": [{"A1": "Name", "B1": "Score"}]}'
 
 # Create PDF from HTML
-python3 create_pdf.py "output.pdf" --html "<h1>Hello</h1><p>World</p>"
+python3 generate_pdf.py "output.pdf" --html "<h1>Hello</h1><p>World</p>"
 ```
 
 **Advanced usage with rich JSON content:**
@@ -66,7 +66,7 @@ python3 create_pdf.py "output.pdf" --html "<h1>Hello</h1><p>World</p>"
 
 Run with:
 ```bash
-python3 create_word.py "report.docx" --content-file "content.json" --title "Report Title"
+python3 generate_word.py "report.docx" --content-file "content.json" --title "Report Title"
 ```
 
 ## File Structure
@@ -75,9 +75,16 @@ python3 create_word.py "report.docx" --content-file "content.json" --title "Repo
 skills/
 └── document-generator/
     ├── SKILL.md              # Skill definition for OpenClaw
-    ├── create_word.py        # Word document generator
-    ├── create_excel.py       # Excel workbook generator
-    ├── create_pdf.py         # PDF generator
+    ├── scripts/
+    │   ├── generate_word.py  # Word document generator
+    │   ├── generate_excel.py # Excel workbook generator
+    │   └── generate_pdf.py   # PDF generator
+    ├── references/
+    │   ├── word_schema.md    # Word configuration reference
+    │   ├── excel_schema.md   # Excel configuration reference
+    │   └── pdf_schema.md     # PDF configuration reference
+    ├── evals/
+    │   └── evals.json        # Evaluation test cases
     ├── install_dependencies.py
     ├── demo_example.py       # Example with rich features
     └── USER_GUIDE.md         # Detailed documentation
